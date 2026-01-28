@@ -42,3 +42,44 @@ This project aims to assist dentists by providing fast, consistent, and visual A
 
 ## 📂 Project Structure
 
+dental-ai-panel/
+│
+├── core/ # Core app (models, views, ML inference)
+├── proje1/ # Django project settings
+├── templates/ # HTML templates
+├── static/ # Static files (CSS, JS, images)
+├── manage.py
+└── README.md
+
+---
+
+## 🧠 AI Inference Pipeline
+
+1. Doctor uploads a dental X-ray
+2. Image is processed by the YOLO-based detection model
+3. Detected findings are returned with:
+   - Class label
+   - Confidence score
+   - Bounding box coordinates
+4. Results are visualized directly on the X-ray image
+
+> **Note:** Trained model files are not included in this repository.
+
+---
+
+## ⚠️ Notes
+
+- AI model weights (`.pt`, `.h5`, `.onnx`) are excluded from the repository
+- Large media files (e.g. background videos) are intentionally ignored
+- This repository focuses on **software architecture and AI integration**
+
+---
+
+## 📌 Future Improvements
+
+- 📄 Automated PDF medical reports
+- 📈 Model performance metrics (precision, recall, mAP)
+- 🧪 Multiple model support
+- 🐳 Dockerized deployment
+- ☁️ Cloud deployment (AWS / Render / Railway)
+
