@@ -40,19 +40,6 @@ This project aims to assist dentists by providing fast, consistent, and visual A
 
 ---
 
-## 📂 Project Structure
-
-dental-ai-panel/
-│
-├── core/ # Core app (models, views, ML inference)
-├── proje1/ # Django project settings
-├── templates/ # HTML templates
-├── static/ # Static files (CSS, JS, images)
-├── manage.py
-└── README.md
-
----
-
 ## 🧠 AI Inference Pipeline
 
 1. Doctor uploads a dental X-ray
