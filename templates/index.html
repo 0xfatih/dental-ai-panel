@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Anasayfa{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">DentAI Panel</h1>
+    <div>
+      <a href="{% url 'upload' %}" class="btn btn-primary btn-sm shadow-sm">
+        <i class="fas fa-upload fa-sm text-white-50"></i> Röntgen Yükle
+      </a>
+      <a href="{% url 'tables' %}" class="btn btn-outline-secondary btn-sm shadow-sm ml-2">
+        <i class="fas fa-list fa-sm"></i> Sonuçlar
+      </a>
+    </div>
+  </div>
+
+  <!-- Anasayfa bilgi kısmı -->
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h4 class="font-weight-bold text-gray-900 mb-2">
+            Yapay Zeka ile Diş Röntgen Analizi
+          </h4>
+          <p class="text-gray-700 mb-3">
+            Bu panel, diş röntgenlerini yükleyip yapay zekâ modeliyle otomatik analiz ederek
+            olası problemleri hızlıca işaretlemeyi amaçlar. Sonuçlar doktorun kararının yerine geçmez;
+            doktorun daha hızlı inceleme yapmasına destek olur.
+          </p>
+
+          <div class="d-flex flex-wrap">
+            <a href="{% url 'upload' %}" class="btn btn-success mr-2 mb-2">
+              <i class="fas fa-teeth-open mr-1"></i> Analize Başla
+            </a>
+            <a href="#howItWorks" class="btn btn-light border mr-2 mb-2">
+              <i class="fas fa-info-circle mr-1"></i> Nasıl Çalışır?
+            </a>
+            <a href="{% url 'yolov11' %}" class="btn btn-light border mb-2">
+              <i class="fas fa-robot mr-1"></i> YOLOv11 Nedir?
+            </a>
+          </div>
+
+          <small class="text-muted d-block mt-3">
+            Not: Bu bir destek sistemidir. Tanı ve tedavi kararı mutlaka doktor tarafından verilmelidir.
+          </small>
+        </div>
+
+        <div class="col-lg-4 text-center d-none d-lg-block">
+          <!-- buraya görsel koyucam -->
+          <i class="fas fa-x-ray fa-7x text-gray-300"></i>
+          <div class="mt-2 text-muted">X-ray • AI • Rapor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proje bilgi kartı -->
+  <div class="row">
+
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                Proje Ne İşe Yarar?
+              </div>
+              <div class="text-gray-700">
+                Röntgende olası sorunları (ör. lezyon/çürük/implant bölgesi vb.) belirleyip
+                işaretleyerek incelemeyi hızlandırır ve kayıtlı sonuçlar üzerinden geçmiş analizleri takip etmeyi sağlar.
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-bolt fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2" id="yolo">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                YOLOv11 Nedir?
+              </div>
+              <div class="text-gray-700">
+                YOLOv11, bir görüntüye “tek bakışta” nesneleri bulup işaretleyebilen hızlı bir yapay zekâ yaklaşımıdır.
+                Model; görüntüde <b>nerede</b> ve <b>ne</b> olduğunu tahmin eder.
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-eye fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-4 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                Çıktılar Ne Üretiyor?
+              </div>
+              <div class="text-gray-700">
+                Her tespit için iki şey verir:
+                <ul class="mb-0 mt-2">
+                  <li><b>Etiket</b> (ör. hastalık/nesne adı)</li>
+                  <li><b>Güven skoru</b> (confidence)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-percentage fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Nasıl çalışır kısmı -->
+  <div class="card shadow mb-4" id="howItWorks">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Nasıl Çalışır?</h6>
+    </div>
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col-lg-3 mb-3">
+          <div class="p-3 border rounded">
+            <div class="font-weight-bold mb-2"><i class="fas fa-upload mr-1"></i> 1) Yükle</div>
+            <div class="text-gray-700">Hasta röntgenini sisteme yüklersin.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-3">
+          <div class="p-3 border rounded">
+            <div class="font-weight-bold mb-2"><i class="fas fa-cogs mr-1"></i> 2) Analiz</div>
+            <div class="text-gray-700">Model görüntüyü işler ve olası bölgeleri bulur.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-3">
+          <div class="p-3 border rounded">
+            <div class="font-weight-bold mb-2"><i class="fas fa-highlighter mr-1"></i> 3) İşaretle</div>
+            <div class="text-gray-700">Bulduğu bölgeleri kutu/etiket ile gösterir.</div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 mb-3">
+          <div class="p-3 border rounded">
+            <div class="font-weight-bold mb-2"><i class="fas fa-file-alt mr-1"></i> 4) Sonuç</div>
+            <div class="text-gray-700">Sonuç ekranında özet + geçmiş analizler görünür.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="d-flex flex-wrap">
+        <a href="{% url 'upload' %}" class="btn btn-primary mr-2 mb-2">
+          <i class="fas fa-play mr-1"></i> Hemen Dene
+        </a>
+        <a href="{% url 'tables' %}" class="btn btn-outline-primary mr-2 mb-2">
+          <i class="fas fa-table mr-1"></i> Tüm Analizler
+        </a>
+        <a href="{% url 'charts' %}" class="btn btn-outline-primary mb-2">
+          <i class="fas fa-chart-area mr-1"></i> İstatistikler
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer kısmı -->
+  <div class="alert alert-light border shadow-sm">
+    <i class="fas fa-shield-alt mr-1"></i>
+    Verileriniz güvenli saklanmalıdır. Bu proje eğitim/AR-GE amaçlıdır; klinik kullanım için ek doğrulama gerekir.
+  </div>
+
+</div>
+{% endblock %}

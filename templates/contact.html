@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}İletişim{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">İletişim</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Dashboard</a></li>
+        <li class="breadcrumb-item active">İletişim</li>
+    </ol>
+
+    <div class="row">
+        <!-- İletişim Formu -->
+        <div class="col-lg-7">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-envelope me-1"></i>
+                    Bize Ulaşın
+                </div>
+                <div class="card-body">
+                    <!-- Şimdilik backend’e bağlı değil,şu an tasarım aşamasında... -->
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ad Soyad</label>
+                            <input type="text" class="form-control" id="name" name="name"
+                                   placeholder="Ör: Dr. Ali Yılmaz">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="ornek@mail.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Konu</label>
+                            <input type="text" class="form-control" id="subject" name="subject"
+                                   placeholder="Ör: Model doğruluğu hakkında">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"
+                                      placeholder="Görüş, öneri veya teknik talebinizi yazabilirsiniz."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-1"></i> Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim Bilgileri -->
+        <div class="col-lg-5">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-circle-info me-1"></i>
+                    İletişim Bilgileri
+                </div>
+                <div class="card-body">
+                    <p class="mb-2">
+                        Dental AI paneliyle ilgili teknik sorular, hata bildirimleri veya geliştirme önerileri
+                        için aşağıdaki kanallardan bize ulaşabilirsiniz.
+                    </p>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">
+                            <i class="fas fa-envelope me-2"></i>
+                            <strong>E-posta:</strong> support@dental-ai.local
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone me-2"></i>
+                            <strong>Telefon:</strong> +90 (000) 000 00 00
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-location-dot me-2"></i>
+                            <strong>Adres:</strong> Lalapaşa Mahallesi Mazi Sokak Birlik Apartmanı daire:3 Yakutiye/Erzurum
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-clock me-1"></i>
+                    Çalışma Saatleri
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li>Pazartesi - Cuma: 09:00 - 18:00</li>
+                        <li>Hafta sonu: Sadece acil teknik destek</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

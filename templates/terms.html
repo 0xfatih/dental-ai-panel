@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Kullanım Şartları{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Kullanım Şartları</h1>
+    <span class="text-muted small">Son güncelleme: 23.12.2025</span>
+  </div>
+
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <p class="mb-3">
+        Bu Kullanım Şartları, <strong>Dental AI Panel</strong> hizmetinin kullanımına ilişkin kuralları açıklar.
+        Hizmeti kullanarak bu şartları kabul etmiş sayılırsınız.
+      </p>
+
+      <div class="alert alert-warning">
+        <strong>Tıbbi Uyarı:</strong> Sistem bir <strong>karar destek</strong> yazılımıdır.
+        Üretilen çıktılar <strong>tanı yerine geçmez</strong>. Klinik değerlendirme ve karar süreçleri hekim sorumluluğundadır.
+      </div>
+
+      <hr>
+
+      <h5 class="mt-3">1) Hizmet Tanımı</h5>
+      <p>
+        Dental AI Panel, dental X-ray görüntülerinde belirli bulguların tespitine yönelik bir yapay zeka analiz hizmeti sunar.
+        Sistem; etiket, güven skoru ve kutu (bbox) koordinatları gibi çıktılar üretebilir.
+      </p>
+
+      <h5 class="mt-4">2) Kullanıcı Sorumlulukları</h5>
+      <ul>
+        <li>Yüklenen görüntüler için gerekli izinleri ve hasta onaylarını almak</li>
+        <li>Hizmeti yasalara ve etik kurallara uygun kullanmak</li>
+        <li>Hizmeti kötüye kullanmamak (spam, saldırı, yetkisiz erişim denemeleri)</li>
+        <li>Sonuçların klinik doğrulama gerektirdiğini kabul etmek</li>
+      </ul>
+
+      <h5 class="mt-4">3) Yasaklı Kullanımlar</h5>
+      <ul>
+        <li>Yetkisiz kişisel veri paylaşımı</li>
+        <li>Sistemi manipüle etme, güvenlik açıklarını kötüye kullanma</li>
+        <li>Hizmetin çalışmasını engelleyecek davranışlar</li>
+      </ul>
+
+      <h5 class="mt-4">4) Fikri Mülkiyet</h5>
+      <p>
+        Dental AI Panel’in arayüzü, yazılımı ve içerikleri ilgili fikri mülkiyet haklarıyla korunur.
+        Kullanıcı, sisteme yüklediği içeriklerden (ör. görüntüler) kendi sorumludur.
+      </p>
+
+      <h5 class="mt-4">5) Sorumluluk Reddi ve Sınırlandırma</h5>
+      <ul>
+        <li>Analiz çıktıları “olduğu gibi” sunulur; hata/eksiklik olabilir.</li>
+        <li>Sistem sonuçları tek başına klinik karar yerine kullanılmamalıdır.</li>
+        <li>Dolaylı/tesadüfi zararlardan sorumluluk sınırlandırılabilir.</li>
+      </ul>
+
+      <h5 class="mt-4">6) Hesap ve Erişim</h5>
+      <p>
+        Hesap güvenliği kullanıcı sorumluluğundadır. Şüpheli kullanım tespit edilirse erişim kısıtlanabilir veya askıya alınabilir.
+      </p>
+
+      <h5 class="mt-4">7) Hizmetin Değiştirilmesi / Sonlandırılması</h5>
+      <p>
+        Hizmet özellikleri güncellenebilir, değiştirilebilir veya gerekli durumlarda geçici olarak durdurulabilir.
+      </p>
+
+      <h5 class="mt-4">8) Geçerli Hukuk</h5>
+      <p>
+        Bu şartların uygulanmasında ilgili mevzuat geçerlidir. (Kars/Türkiye)
+      </p>
+
+      <h5 class="mt-4">9) İletişim</h5>
+      <p class="mb-0">
+        Şartlar ile ilgili sorularınız için: <strong>fatihalp123@gmail.com</strong><br>
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

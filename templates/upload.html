@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Röntgen Yükle{% endblock %}
+
+{% block content %}
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Röntgen Yükle</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item">
+                <a href="{% url 'index' %}">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Röntgen Yükle</li>
+        </ol>
+
+        <div class="row">
+            <div class="col-xl-8 col-lg-9">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-upload me-1"></i>
+                        Yeni Diş Röntgeni Analizi
+                    </div>
+                    <div class="card-body">
+                     <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="image" class="form-control" required>
+                        <textarea name="notes" class="form-control" placeholder="Notlar (opsiyonel)"></textarea>
+                        <button type="submit" class="btn btn-primary mt-3">Yükle</button>
+                        </form>
+                        {% if error %}
+                        <div class="alert alert-danger mt-3">{{ error }}</div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-3">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Bilgi
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-2">
+                            Bu panel, diş röntgenlerinden hastalık tespiti için
+                            YOLOv11 tabanlı modeli kullanır.
+                        </p>
+                        <ul class="mb-0">
+                            <li>Röntgen yüklendikten sonra model çalıştırılacaktır.</li>
+                            <li>Sonuçlar <strong>Analiz Sonucu</strong> sayfasında gösterilecektir.</li>
+                            <li>İleride bu sonuçlar hasta geçmişine kaydedilebilir.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

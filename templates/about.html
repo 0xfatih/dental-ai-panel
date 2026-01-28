@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Hakkımızda{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Hakkımızda</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Dashboard</a></li>
+        <li class="breadcrumb-item active">Hakkımızda</li>
+    </ol>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-tooth me-1"></i>
+                    Dental AI Projesi
+                </div>
+                <div class="card-body">
+                    <p>
+                        Dental AI, diş hekimlerine röntgen görüntülerinden hastalık tespiti konusunda
+                        yapay zeka desteği sağlamak amacıyla geliştirilmiş bir karar destek sistemidir.
+                    </p>
+                    <p>
+                        Sistem, YOLOv11 tabanlı bir derin öğrenme modeli kullanarak diş röntgenlerini analiz eder
+                        ve çürük, enfeksiyon gibi patolojileri otomatik olarak tespit etmeye yardımcı olur.
+                    </p>
+                    <p class="mb-0">
+                        Amaç; <strong>hızlı, tekrarlanabilir ve tutarlı</strong> bir ön değerlendirme sunarak
+                        hekimin iş yükünü azaltmak ve hasta sürecini iyileştirmektir.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-microchip me-1"></i>
+                    Kullanılan Teknolojiler
+                </div>
+                <div class="card-body">
+                    <ul class="mb-0">
+                        <li>Django tabanlı web paneli</li>
+                        <li>YOLOv11 ile eğitilmiş derin öğrenme modeli</li>
+                        <li>Python, OpenCV, PyTorch</li>
+                        <li>Bootstrap &amp; SB Admin teması</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-user-md me-1"></i>
+                    Kullanım Senaryosu
+                </div>
+                <div class="card-body">
+                    <ol class="mb-0">
+                        <li>Hasta röntgeni sisteme yüklenir.</li>
+                        <li>Model otomatik analiz yapar.</li>
+                        <li>Olası patolojiler ve skorlar listelenir.</li>
+                        <li>Hekim sonuçları değerlendirerek nihai kararı verir.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-triangle-exclamation me-1"></i>
+                    Önemli Not
+                </div>
+                <div class="card-body">
+                    <p class="mb-0">
+                        Bu sistem bir <strong>klinik karar destek aracıdır</strong>. 
+                        Son tanı ve tedavi kararı her zaman <strong>diş hekimi</strong> tarafından verilmelidir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

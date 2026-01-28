@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}YOLOv11 Teknolojisi{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">YOLOv11 Teknolojisi</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Dashboard</a></li>
+        <li class="breadcrumb-item active">YOLOv11</li>
+    </ol>
+
+    <!-- GİRİŞ -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-lightbulb me-1"></i>
+            YOLOv11 Nedir?
+        </div>
+        <div class="card-body">
+            <p>
+                <strong>YOLO (You Only Look Once)</strong>, görüntü işleme alanında kullanılan,
+                gerçek zamanlı nesne tespiti (object detection) yapabilen derin öğrenme tabanlı
+                bir algoritma ailesidir.
+            </p>
+            <p>
+                <strong>YOLOv11</strong>, bu mimarinin en güncel ve optimize edilmiş sürümlerinden
+                biri olup, hem hız hem de doğruluk açısından önceki YOLO sürümlerine göre
+                önemli iyileştirmeler sunar.
+            </p>
+            <p class="mb-0">
+                YOLO’nun temel felsefesi, bir görüntüyü tek bir ileri geçişte (single forward pass)
+                analiz ederek tüm nesneleri ve konumlarını aynı anda tahmin etmektir.
+            </p>
+        </div>
+    </div>
+
+    <!-- NASIL ÇALIŞIR -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-cogs me-1"></i>
+            YOLOv11 Nasıl Çalışır?
+        </div>
+        <div class="card-body">
+            <p>
+                YOLOv11, bir görüntüyü girdi olarak alır ve bu görüntü üzerinde aşağıdaki bilgileri üretir:
+            </p>
+            <ul>
+                <li><strong>Bounding Box (BBox):</strong> Nesnenin görüntü içindeki konumu</li>
+                <li><strong>Label:</strong> Nesnenin sınıfı (ör. çürük, dolgu, implant)</li>
+                <li><strong>Confidence Score:</strong> Tahminin güven oranı</li>
+            </ul>
+            <p>
+                Model, evrişimli sinir ağları (CNN) ve modern feature extraction teknikleri
+                kullanarak görüntüdeki önemli bölgeleri öğrenir ve tahmin üretir.
+            </p>
+            <p class="mb-0">
+                YOLOv11’in en büyük avantajı, bu işlemleri milisaniyeler içinde yapabilmesidir.
+            </p>
+        </div>
+    </div>
+
+    <!-- NERELERDE KULLANILIR -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-globe me-1"></i>
+            YOLOv11 Nerelerde Kullanılır?
+        </div>
+        <div class="card-body">
+            <ul>
+                <li>Otonom araçlar (yaya, araç, trafik işareti tespiti)</li>
+                <li>Tıbbi görüntü analizi</li>
+                <li>Güvenlik ve gözetim sistemleri</li>
+                <li>Endüstriyel kalite kontrol</li>
+                <li>Tarım ve biyomedikal görüntü işleme</li>
+            </ul>
+            <p class="mb-0">
+                Yüksek hız ve doğruluk gerektiren gerçek zamanlı uygulamalarda sıklıkla tercih edilir.
+            </p>
+        </div>
+    </div>
+
+    <!-- DENTAL AI İLE İLİŞKİ -->
+    <div class="card mb-4 border-primary">
+        <div class="card-header bg-primary text-white">
+            <i class="fas fa-tooth me-1"></i>
+            YOLOv11 ve Dental AI Panel İlişkisi
+        </div>
+        <div class="card-body">
+            <p>
+                Dental AI Panel projesinde YOLOv11, diş röntgenleri üzerinde otomatik
+                <strong>patoloji tespiti</strong> yapmak amacıyla kullanılmaktadır.
+            </p>
+            <p>
+                Model, röntgen görüntülerinde aşağıdaki durumları tespit edebilecek şekilde eğitilmiştir:
+            </p>
+            <ul>
+                <li>Diş çürükleri</li>
+                <li>Dolgular</li>
+                <li>Kronlar</li>
+                <li>İmplantlar</li>
+                <li>Diğer anormal yapılar</li>
+            </ul>
+            <p>
+                YOLOv11 tarafından üretilen çıktılar:
+            </p>
+            <ul>
+                <li>Algılanan hastalığın etiketi</li>
+                <li>Güven skoru</li>
+                <li>İlgili bölgenin konumsal bilgisi (bounding box)</li>
+            </ul>
+            <p class="mb-0">
+                Bu çıktılar, Dental AI Panel içerisinde veritabanına kaydedilir ve
+                doktorların röntgenleri daha hızlı ve objektif şekilde değerlendirmesine yardımcı olur.
+            </p>
+        </div>
+    </div>
+
+    <!-- SONUÇ -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-flag-checkered me-1"></i>
+            Sonuç
+        </div>
+        <div class="card-body">
+            <p>
+                YOLOv11, yüksek performanslı nesne tespiti yetenekleri sayesinde
+                Dental AI Panel için güçlü bir çekirdek teknoloji sunmaktadır.
+            </p>
+            <p class="mb-0">
+                Bu sayede diş röntgenlerinin analizi otomatikleştirilmekte,
+                hata payı azaltılmakta ve klinik karar süreçleri desteklenmektedir.
+            </p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

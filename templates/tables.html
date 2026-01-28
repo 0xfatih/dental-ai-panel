@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Tüm Röntgenler{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">Tüm Röntgenler</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Röntgenler</li>
+    </ol>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Yüklenen Röntgenler
+        </div>
+        <div class="card-body">
+
+            <table id="datatablesSimple" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Yükleme Tarihi</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Yükleme Tarihi</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    {% for x in xrays %}
+                        <tr>
+                            <td>#{{ x.id }}</td>
+                            <td>{{ x.created_at|date:"d.m.Y H:i" }}</td>
+                            <td>
+                                {% if x.status %}
+                                    <span class="badge 
+                                        {% if x.status == 'DONE' %} bg-success
+                                        {% elif x.status == 'FAILED' %} bg-danger
+                                        {% else %} bg-warning text-dark
+                                        {% endif %}">
+                                        {{ x.status }}
+                                    </span>
+                                {% else %}
+                                    <span class="badge bg-secondary">N/A</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{% url 'results' x.id %}" class="btn btn-sm btn-primary">
+                                    Sonuçları Gör
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4" class="text-center">
+                                Henüz yüklenmiş röntgen bulunmuyor.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

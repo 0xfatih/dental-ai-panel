@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gizlilik Politikası{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Gizlilik Politikası</h1>
+    <span class="text-muted small">Son güncelleme: 23.12.2025</span>
+  </div>
+
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <p class="mb-3">
+        Bu Gizlilik Politikası, <strong>Dental AI Panel</strong> üzerinden paylaştığınız verilerin nasıl toplandığını,
+        işlendiğini ve korunduğunu açıklar.
+      </p>
+
+      <div class="alert alert-warning">
+        <strong>Önemli:</strong> Dental AI Panel bir <strong>karar destek</strong> aracıdır. Üretilen sonuçlar tıbbi tanı değildir.
+        Nihai değerlendirme ve klinik karar <strong>hekim sorumluluğundadır</strong>.
+      </div>
+
+      <hr>
+
+      <h5 class="mt-3">1) Toplanan Veriler</h5>
+      <ul>
+        <li><strong>Röntgen Görüntüleri:</strong> Yüklediğiniz dental X-ray görselleri.</li>
+        <li><strong>Analiz Sonuçları:</strong> Modelin ürettiği etiketler, güven skorları ve varsa bbox koordinatları.</li>
+        <li><strong>Hesap Bilgileri:</strong> Kullanıcı adı/e-posta gibi giriş ve yetkilendirme bilgileri (varsa).</li>
+        <li><strong>Teknik Veriler:</strong> Hata kayıtları, temel kullanım log’ları (güvenlik ve hata ayıklama amaçlı).</li>
+      </ul>
+
+      <h5 class="mt-4">2) Verileri Neden İşliyoruz?</h5>
+      <ul>
+        <li>Yüklediğiniz görüntüleri analiz etmek ve sonuç göstermek</li>
+        <li>Hizmet kalitesini artırmak, hataları tespit etmek</li>
+        <li>Güvenlik, yetkilendirme ve kötüye kullanımı önlemek</li>
+      </ul>
+
+      <h5 class="mt-4">3) Verileri Kimlerle Paylaşıyoruz?</h5>
+      <p>
+        Verileriniz <strong>kural olarak paylaşılmaz</strong>. Yalnızca aşağıdaki durumlarda paylaşım olabilir:
+      </p>
+      <ul>
+        <li><strong>Yasal zorunluluk</strong> (mahkeme/kurum talebi)</li>
+        <li>Hizmeti çalıştırmak için gerekli <strong>altyapı sağlayıcıları</strong> (barındırma vb.) — mümkünse minimum veri</li>
+        <li>Kullanıcının açık rızası ile</li>
+      </ul>
+
+      <h5 class="mt-4">4) Saklama Süresi (Retention)</h5>
+      <p>
+        Röntgen görüntüleri ve analiz sonuçları, hizmeti sunmak için gerekli süre boyunca saklanır.
+        Kurumsal/akademik kullanım senaryosunda saklama süresi proje gereksinimlerine göre değişebilir.
+        İstendiğinde silme talebi değerlendirilebilir.
+      </p>
+
+      <h5 class="mt-4">5) Güvenlik</h5>
+      <ul>
+        <li>Yetkisiz erişimi engellemek için giriş/oturum kontrolleri</li>
+        <li>Sunucu tarafında dosya erişim kısıtlamaları</li>
+        <li>Gerekli durumlarda log/izleme ile güvenlik denetimi</li>
+      </ul>
+      <p class="text-muted small mb-0">
+        Not: Hiçbir sistem %100 güvenli değildir; ancak makul teknik ve idari önlemler uygulanır.
+      </p>
+
+      <h5 class="mt-4">6) Kullanıcı Hakları</h5>
+      <ul>
+        <li>Verilerinize erişim talep etme</li>
+        <li>Düzeltme / güncelleme talep etme</li>
+        <li>Silme talep etme (uygulanabilirlik durumuna göre)</li>
+      </ul>
+
+      <h5 class="mt-4">7) Çerezler (Cookies)</h5>
+      <p>
+        Oturum yönetimi ve güvenlik amacıyla teknik çerezler kullanılabilir.
+        Pazarlama amaçlı çerez kullanımı varsa ayrıca bildirilir.
+      </p>
+
+      <h5 class="mt-4">8) İletişim</h5>
+      <p class="mb-0">
+        Gizlilik ile ilgili sorularınız için: <strong>fatihalp123@gmail.com</strong><br>       
+      </p>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
